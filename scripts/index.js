@@ -18,7 +18,7 @@ function initMap() {
   }
 
   // create array of addresses for each marker
-  var secretMessages = ['This', 'is', 'the', 'secret', 'message'];
+  var secretMessages = ['2801 W Estrella St', 'is', 'the', 'secret', 'message'];
 
   // create icon and properties
   var icon = {
@@ -32,34 +32,34 @@ function initMap() {
     map: map,
     icon: icon
   });
-  attachSecretMessage(estrella, secretMessages[i]);
+  attachSecretMessage(estrella, secretMessages[0]);
 
   var juanita = new google.maps.Marker({
     position: new google.maps.LatLng(27.868068, -82.529975),
     map: map,
     icon: icon
   });
-  attachSecretMessage(juanita, secretMessages[i]);
+  attachSecretMessage(juanita, secretMessages[1]);
 
   var luna = new google.maps.Marker({
     position: new google.maps.LatLng(27.928471, -82.491106),
     map: map,
     icon: icon
   });
-  attachSecretMessage(luna, secretMessages[i]);
+  attachSecretMessage(luna, secretMessages[2]);
 
   var feliz = new google.maps.Marker({
     position: new google.maps.LatLng(27.928510, -82.492345),
     map: map,
     icon: icon
   });
-  attachSecretMessage(feliz, secretMessages[i]);
+  attachSecretMessage(feliz, secretMessages[3]);
   
   var bella = new google.maps.Marker({
     position: new google.maps.LatLng(27.866954, -82.524223),
     map: map,
     icon: icon
   });
-  attachSecretMessage(bella, secretMessages[i]);
+  attachSecretMessage(bella, secretMessages[4]);
 
 }

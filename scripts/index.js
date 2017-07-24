@@ -1,11 +1,4 @@
 function initMap() {
-  
-  // get coordinates for every property listing
-  var bella = {lat: 27.866954, lng: -82.524223};
-  var estrella = {lat: 27.928814, lng: -82.489407};
-  var juanita = {lat: 27.868068, lng: -82.529975};
-  var luna = {lat: 27.928471, lng: -82.491106};
-  var feliz = {lat: 27.928510, lng: -82.492345};
 
   // center the map
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -14,27 +7,29 @@ function initMap() {
   });
 
   // create markers for each property listing
-  var marker = new google.maps.Marker({
-    position: estrella,
-    map: map
+  var estrella = new google.maps.Marker({
+    position: new google.maps.LatLng(27.928814, -82.489407),
+    map: map,
+    icon: "google map marker.png"
   });
-  var marker = new google.maps.Marker({
-    position: juanita,
-    map: map
+  var juanita = new google.maps.Marker({
+    position: new google.maps.LatLng(27.868068, -82.529975),
+    map: map,
+    icon: "google map marker.png"
   });
-  var marker = new google.maps.Marker({
-    position: luna,
-    map: map
+  var luna = new google.maps.Marker({
+    position: new google.maps.LatLng(27.928471, -82.491106),
+    map: map,
+    icon: "google map marker.png"
   });
-  var marker = new google.maps.Marker({
-    position: feliz,
-    map: map
+  var feliz = new google.maps.Marker({
+    position: new google.maps.LatLng(27.928510, -82.492345),
+    map: map,
+    icon: "google map marker.png"
   });
-  var marker = new google.maps.Marker({
-    position: bella,
-    map: map
+  var bella = new google.maps.Marker({
+    position: new google.maps.LatLng(27.866954, -82.524223),
+    map: map,
+    icon: "google map marker.png"
   });
-
-
-
 }

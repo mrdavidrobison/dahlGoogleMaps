@@ -1,22 +1,22 @@
 {
-  "name": "Simon-Game",
+  "name": "dahlGoogleMaps",
   "version": "1.0.0",
-  "description": "Simon-Game",
+  "description": "dahlGoogleMaps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mrdavidrobison/Simon-Game.git"
+    "url": "https://github.com/mrdavidrobison/dahlGoogleMaps.git"
   },
   "keywords": [],
   "author": "david robison",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrdavidrobison/Simon-Game/issues"
+    "url": "https://github.com/mrdavidrobison/dahlGoogleMaps/issues"
   },
-  "homepage": "https://github.com/mrdavidrobison/Simon-Game#readme",
+  "homepage": "https://github.com/mrdavidrobison/dahlGoogleMaps#readme",
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",

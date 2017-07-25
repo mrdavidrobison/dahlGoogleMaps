@@ -11,18 +11,31 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow({
       content: secretMessage
     });
-
+    
+    // listen for click event
     marker.addListener('click', function () {
       infowindow.open(marker.get('map'), marker);
     });
+
+    var currWindow = false;
+
+    google.maps.event.addListener(marker, 'click', function () {
+      if (currWindow) {
+        currWindow.close();
+      }
+
+      currWindow = infowindow;
+      infowindow.open(base.map, marker);
+    });
+
   }
 
-  // create array of addresses for each marker
-  var secretMessages = ['2801 W Estrella St', 'is', 'the', 'secret', 'message'];
+  // create array of messages of addresses for each marker
+  var secretMessages = ['<div id="casaMarker"><h4 id="casaTitle">Casa Estrella </h4><p id="casaAddress">2801 W Estrella St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/villa-estrella/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Juanita </h4><p id="casaAddress">6806 S Juanita St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-juanita/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Luna </h4><p id="casaAddress">2904 W Estrella St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-luna/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Feliz </h4><p id="casaAddress">3006 W Estrella St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-feliz/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Bella </h4><p id="casaAddress">6824 S Sparkman St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-bella/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>'];
 
-  // create icon and properties
+  // choose icon
   var icon = {
-    url: "google map marker.png",
+    url: "house-icon-black.jpeg",
     scaledSize: new google.maps.Size(50, 50),
   };
 
@@ -54,7 +67,7 @@ function initMap() {
     icon: icon
   });
   attachSecretMessage(feliz, secretMessages[3]);
-  
+
   var bella = new google.maps.Marker({
     position: new google.maps.LatLng(27.866954, -82.524223),
     map: map,

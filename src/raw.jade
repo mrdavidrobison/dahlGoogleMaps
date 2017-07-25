@@ -57,7 +57,7 @@ html(lang='en')
       currWindow.close();
       }
       currWindow = infowindow;
-      infowindow.open(base.map, marker);
+      infowindow.open(map, marker);
       });
       }
       // create array of messages of addresses for each marker
@@ -94,8 +94,9 @@ html(lang='en')
       });
       attachSecretMessage(bella, secretMessages[4]);
       }
-      google.maps.event.addListenerOnce(map, 'idle', function() {
-        google.maps.event.trigger(map, 'resize');
+      google.maps.event.addDomListener(window, "resize", function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center); 
       });
-      google.maps.event.trigger(map, 'resize');
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB10zmH7mgF_T2paATNh92XpkwkVwP-WQs&callback=initMap', async='async', defer='defer')

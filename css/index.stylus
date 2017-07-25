@@ -13,7 +13,7 @@ html, body
   width auto
 
 #casaTitle
-  line-height 5px
+  line-height 12px
 
 #casaAddress
   line-height 5px
@@ -22,8 +22,7 @@ html, body
   color #c69670
   font-weight bold
   line-height 1px
+  text-decoration underline
 
 #casaArrow
-  text-decoration none
-  display inline block
-  line-height 1px
+  color #c69670

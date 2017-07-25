@@ -5,3 +5,25 @@ html, body
   height 100%
   margin 0
   padding 0
+  font-weight bold
+  font-family sans-serif
+
+#casaMarker
+  height auto
+  width auto
+
+#casaTitle
+  line-height 5px
+
+#casaAddress
+  line-height 5px
+
+#casaLink
+  color #c69670
+  font-weight bold
+  line-height 1px
+
+#casaArrow
+  text-decoration none
+  display inline block
+  line-height 1px

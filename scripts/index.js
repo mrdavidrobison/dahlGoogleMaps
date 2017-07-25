@@ -23,7 +23,7 @@ function initMap() {
     marker.addListener('click', function () {
       infowindow.open(marker.get('map'), marker);
     });
-    
+
     google.maps.event.addListener(marker, 'click', function () {
       if (currWindow) {
         currWindow.close();
@@ -73,5 +73,10 @@ function initMap() {
     icon: icon
   });
   attachSecretMessage(bella, secretMessages[4]);
-
+  
+  google.maps.event.addDomListener(window, "resize", function () {
+    var center = map.getCenter();
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(center);
+  });
 }

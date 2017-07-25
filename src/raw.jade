@@ -94,4 +94,8 @@ html(lang='en')
       });
       attachSecretMessage(bella, secretMessages[4]);
       }
+      google.maps.event.addListenerOnce(map, 'idle', function() {
+        google.maps.event.trigger(map, 'resize');
+      });
+      google.maps.event.trigger(map, 'resize');
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB10zmH7mgF_T2paATNh92XpkwkVwP-WQs&callback=initMap', async='async', defer='defer')

@@ -6,19 +6,24 @@ function initMap() {
     zoom: 13
   });
 
+  // choose map marker icon
+  var icon = {
+    url: "house-icon-black.jpg",
+    scaledSize: new google.maps.Size(50, 50),
+  };
+
+  var currWindow = false;
+
   // create event listener and message after click markers
   function attachSecretMessage(marker, secretMessage) {
     var infowindow = new google.maps.InfoWindow({
       content: secretMessage
     });
-    
     // listen for click event
     marker.addListener('click', function () {
       infowindow.open(marker.get('map'), marker);
     });
-
-    var currWindow = false;
-
+    
     google.maps.event.addListener(marker, 'click', function () {
       if (currWindow) {
         currWindow.close();
@@ -32,12 +37,6 @@ function initMap() {
 
   // create array of messages of addresses for each marker
   var secretMessages = ['<div id="casaMarker"><h4 id="casaTitle">Casa Estrella </h4><p id="casaAddress">2801 W Estrella St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/villa-estrella/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Juanita </h4><p id="casaAddress">6806 S Juanita St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-juanita/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Luna </h4><p id="casaAddress">2904 W Estrella St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-luna/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Feliz </h4><p id="casaAddress">3006 W Estrella St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-feliz/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>', '<div id="casaMarker"><h4 id="casaTitle">Casa Bella </h4><p id="casaAddress">6824 S Sparkman St </p><a id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-bella/">Go to Property Details <span id="casaArrow">&#9654;</span></a></div>'];
-
-  // choose icon
-  var icon = {
-    url: "house-icon-black.jpeg",
-    scaledSize: new google.maps.Size(50, 50),
-  };
 
   // create markers for each property listing
   var estrella = new google.maps.Marker({

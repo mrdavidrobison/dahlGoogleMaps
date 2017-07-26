@@ -16,13 +16,13 @@ html, body
   width auto
 
 #casaTitle
-  line-height 0px
+  line-height 20px
   font-size 12px
   font-weight bold
   color #000000
 
 #casaAddress
-  line-height 5px
+  line-height 0px
   font-size 12px
   font-weight regular
   color #000000
@@ -35,4 +35,5 @@ html, body
   text-decoration underline
 
 #casaArrow
+  color #c69670
   url "https://dahlproperties.com/wp-content/uploads/2017/07/icon_tan_arrow_right.png"

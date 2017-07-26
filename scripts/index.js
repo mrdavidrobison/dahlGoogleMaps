@@ -3,13 +3,13 @@ function initMap() {
   // center the map
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 27.899, lng: -82.515 },
-    zoom: 13
+    zoom: 12
   });
 
   // choose map marker icon
   var icon = {
     url: "https://dahlproperties.com/wp-content/uploads/2017/07/icon_property_marker.png",
-    scaledSize: new google.maps.Size(50, 50),
+    scaledSize: new google.maps.Size(30, 30),
   };
 
   var currWindow = false;

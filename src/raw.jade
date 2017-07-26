@@ -3,29 +3,47 @@ html(lang='en')
   head
     style.
       #map {
-      height: 400px;
-      width: 100%;
-      display: block;
+        height: 400px;
+        width: 100%;
+        display: block;
+        margin-top: 20px;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        font-family: sans-serif;
       }
       #casaMarker {
-      height: auto;
-      width: auto;
+        height: auto;
+        width: auto;
       }
       #casaTitle {
-      line-height: 12px;
+        line-height: 0px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000;
       }
       #casaAddress {
-      line-height: 5px;
+        line-height: 5px;
+        font-size: 12px;
+        font-weight: regular;
+        color: #000;
       }
       #casaLink {
-      color: #c69670;
-      font-weight: bold;
-      line-height: 1px;
-      text-decoration: underline;
+        color: #c69670;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 0px;
+        text-decoration: underline;
       }
       #casaArrow {
-      color: #c69670;
+        color: #c69670;
+        url: "https://dahlproperties.com/wp-content/uploads/2017/07/icon_tan_arrow_right.png";
       }
+
   body
     #map
     script(async='async', defer='defer').
@@ -37,7 +55,7 @@ html(lang='en')
       });
       // choose map marker icon
       var icon = {
-      url: "http://brainstorm.solutions/dahl/wp-content/uploads/2017/07/house-icon-black.png",
+      url: "https://dahlproperties.com/wp-content/uploads/2017/07/icon_property_marker.png",
       scaledSize: new google.maps.Size(30, 30),
       };
       var currWindow = false;

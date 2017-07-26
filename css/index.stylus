@@ -1,6 +1,8 @@
 #map 
-  height 500px
+  height 40%
   width 100%
+  display block
+  margin-top 20px
 
 html, body 
   height 100%

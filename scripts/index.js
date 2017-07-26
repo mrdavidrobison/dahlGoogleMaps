@@ -8,7 +8,7 @@ function initMap() {
 
   // choose map marker icon
   var icon = {
-    url: "house-icon-black.jpg",
+    url: "https://dahlproperties.com/wp-content/uploads/2017/07/icon_property_marker.png",
     scaledSize: new google.maps.Size(50, 50),
   };
 

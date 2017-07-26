@@ -4,10 +4,11 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    style.
+      style.
       #map {
-        height: 500px;
-        width: 100%;
+      height: 400px;
+      width: 100%;
+      display: block;
       }
       #casaMarker {
       height: auto;
@@ -40,7 +41,7 @@ html(lang='en')
       // choose map marker icon
       var icon = {
       url: "http://brainstorm.solutions/dahl/wp-content/uploads/2017/07/house-icon-black.png",
-      scaledSize: new google.maps.Size(50, 50),
+      scaledSize: new google.maps.Size(30, 30),
       };
       var currWindow = false;
       // create event listener and message after click markers
@@ -93,10 +94,10 @@ html(lang='en')
       icon: icon
       });
       attachSecretMessage(bella, secretMessages[4]);
-      }
       google.maps.event.addDomListener(window, "resize", function() {
-        var center = map.getCenter();
-        google.maps.event.trigger(map, "resize");
-        map.setCenter(center); 
+      var center = map.getCenter();
+      google.maps.event.trigger(map, "resize");
+      map.setCenter(center);
       });
+      }
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB10zmH7mgF_T2paATNh92XpkwkVwP-WQs&callback=initMap', async='async', defer='defer')

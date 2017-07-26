@@ -3,7 +3,7 @@ function initMap() {
   // center the map
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 27.899, lng: -82.515 },
-    zoom: 12
+    zoom: 13
   });
 
   // choose map marker icon

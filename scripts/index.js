@@ -3,7 +3,12 @@ function initMap() {
   // center the map
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 27.899, lng: -82.515 },
-    zoom: 13
+    zoom: 13,
+    mapTypeId: 'roadmap',
+    zoomControl: false,
+    scaleControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true
   });
 
   // choose map marker icon

@@ -1,4 +1,74 @@
 <link rel="stylesheet" type="text/css" href="http://brainstorm.solutions/dahl/wp-content/themes/yreg-estate-child/style.css">
+<style>
+  #map {
+    height: 480px;
+    width: 100%;
+    display: block;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  #casaMarker {
+    height: auto;
+    width: auto;
+  }
+
+  #casaPriceBedAndBath {
+    background-color: #c69670;
+    margin-top: -3px;
+    padding-top: 0.1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0.1px;
+  }
+
+  #casaPrice {
+    line-height: 0px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  #casaBedAndBath {
+    float: right;
+    font-weight: bold;
+    margin-top: -22px;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  #casaTitle {
+    line-height: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  #casaAddress {
+    line-height: 0px;
+    font-size: 12px;
+    color: #000;
+  }
+
+  #casaLink {
+    line-height: 0px;
+    color: #c69670;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  #casaArrow {
+    color: #c69670;
+  }
+</style>
 
 <body>
   <div id="map"></div>
@@ -6,7 +76,10 @@
     function initMap() {
       // center the map
       var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 27.899, lng: -82.515 },
+        center: {
+          lat: 27.899,
+          lng: -82.515
+        },
         zoom: 12,
         mapTypeId: 'roadmap',
         zoomControl: false,
@@ -39,7 +112,13 @@
         });
       }
       // create array of messages of addresses for each marker
-      var secretMessages = ['<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2016/12/villa_estrella-328.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,750</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Villa Estrella </h3><p id="casaAddress">2801 W Estrella St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/villa-estrella/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>', '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/07/Casa_Juanita_2.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,999</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Casa Juanita </h3><p id="casaAddress">6806 S Juanita St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-juanita/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>', '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/02/CasaLuna-440.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,300</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Casa Luna </h3><p id="casaAddress">2904 W Estrella St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-luna/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>', '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/02/Coming_Soon.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice"></p><p id="casaBedAndBath">2bd 2ba</p></div><h3 id="casaTitle">Casa Feliz </h3><p id="casaAddress">3006 W Estrella St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-feliz/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>', '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/07/Casa_Bella_7.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,200</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Casa Bella </h3><p id="casaAddress">6824 S Sparkman St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-bella/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>'];
+      var secretMessages = [
+        '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2016/12/villa_estrella-328.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,750</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Villa Estrella </h3><p id="casaAddress">2801 W Estrella St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/villa-estrella/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>',
+        '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/07/Casa_Juanita_2.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,999</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Casa Juanita </h3><p id="casaAddress">6806 S Juanita St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-juanita/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>',
+        '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/02/CasaLuna-440.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,300</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Casa Luna </h3><p id="casaAddress">2904 W Estrella St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-luna/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>',
+        '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/02/Coming_Soon.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice"></p><p id="casaBedAndBath">2bd 2ba</p></div><h3 id="casaTitle">Casa Feliz </h3><p id="casaAddress">3006 W Estrella St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-feliz/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>',
+        '<div id="casaMarker"><img src="http://brainstorm.solutions/dahl/wp-content/uploads/2017/07/Casa_Bella_7.jpg" height="80" width="133"><div id="casaPriceBedAndBath"><p id="casaPrice">$1,200</p><p id="casaBedAndBath">2bd 1ba</p></div><h3 id="casaTitle">Casa Bella </h3><p id="casaAddress">6824 S Sparkman St </p><a target="_parent" id="casaLink" href="http://brainstorm.solutions/dahl/property/casa-bella/">Go to Property Details</a><span id="casaArrow"> &#9654;</span></div>'
+      ];
       // create markers for each property listing
       var estrella = new google.maps.Marker({
         position: new google.maps.LatLng(27.928814, -82.489407),
